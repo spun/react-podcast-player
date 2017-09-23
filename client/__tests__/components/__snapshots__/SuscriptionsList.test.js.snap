@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuscriptionsList creation with items 1`] = `
+<div>
+  <div>
+    <ul
+      className="nav suscriptions-list"
+    >
+      <li>
+        <a
+          className={undefined}
+          href="/podcasts/undefined"
+          onClick={[Function]}
+          style={undefined}
+        >
+          <p
+            className="title"
+          >
+            Suscription 1
+          </p>
+          <p
+            className="author text-muted"
+          >
+            All listened
+          </p>
+        </a>
+      </li>
+      <li>
+        <a
+          className={undefined}
+          href="/podcasts/undefined"
+          onClick={[Function]}
+          style={undefined}
+        >
+          <p
+            className="title"
+          >
+            Suscription 2
+          </p>
+          <p
+            className="author text-muted"
+          >
+            All listened
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

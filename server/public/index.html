@@ -1,0 +1,968 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>adi API</title>
+    <style type="text/css">
+        body {
+            font-family: Trebuchet MS, sans-serif;
+            font-size: 15px;
+            color: #444;
+            margin-right: 24px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        hr {
+            height: 1px;
+            border: 0;
+            color: #ddd;
+            background-color: #ddd;
+            display: none;
+        }
+
+        .app-desc {
+            clear: both;
+            margin-left: 20px;
+        }
+
+        .param-name {
+            width: 100%;
+        }
+
+        .license-info {
+            margin-left: 20px;
+        }
+
+        .license-url {
+            margin-left: 20px;
+        }
+
+        .model {
+            margin: 0 0 0px 20px;
+        }
+
+        .method {
+            margin-left: 20px;
+        }
+
+        .method-notes {
+            margin: 10px 0 20px 0;
+            font-size: 90%;
+            color: #555;
+        }
+
+        pre {
+            padding: 10px;
+            margin-bottom: 2px;
+        }
+
+        .http-method {
+            text-transform: uppercase;
+        }
+
+        pre.get {
+            background-color: #0f6ab4;
+        }
+
+        pre.post {
+            background-color: #10a54a;
+        }
+
+        pre.put {
+            background-color: #c5862b;
+        }
+
+        pre.delete {
+            background-color: #a41e22;
+        }
+
+        .huge {
+            color: #fff;
+        }
+
+        pre.example {
+            background-color: #f3f3f3;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        code {
+            white-space: pre;
+        }
+
+        .nickname {
+            font-weight: bold;
+        }
+
+        .method-path {
+            font-size: 1.5em;
+            background-color: #0f6ab4;
+        }
+
+        .up {
+            float: right;
+        }
+
+        .parameter {
+            width: 500px;
+        }
+
+        .param {
+            width: 500px;
+            padding: 10px 0 0 20px;
+            font-weight: bold;
+        }
+
+        .param-desc {
+            width: 700px;
+            padding: 0 0 0 20px;
+            color: #777;
+        }
+
+        .param-type {
+            font-style: italic;
+        }
+
+        .param-enum-header {
+            width: 700px;
+            padding: 0 0 0 60px;
+            color: #777;
+            font-weight: bold;
+        }
+
+        .param-enum {
+            width: 700px;
+            padding: 0 0 0 80px;
+            color: #777;
+            font-style: italic;
+        }
+
+        .field-label {
+            padding: 0;
+            margin: 0;
+            clear: both;
+        }
+
+        .field-items {
+            padding: 0 0 15px 0;
+            margin-bottom: 15px;
+        }
+
+        .return-type {
+            clear: both;
+            padding-bottom: 10px;
+        }
+
+        .param-header {
+            font-weight: bold;
+        }
+
+        .method-tags {
+            text-align: right;
+        }
+
+        .method-tag {
+            background: none repeat scroll 0% 0% #24A600;
+            border-radius: 3px;
+            padding: 2px 10px;
+            margin: 2px;
+            color: #FFF;
+            display: inline-block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>adi API</h1>
+    <div class="app-desc">API de la asignatura adi</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+    <h2>Access</h2>
+
+    <h2><a name="__Methods">Methods</a></h2>
+    [ Jump to <a href="#__Models">Models</a> ]
+
+    <h2>Table of Contents </h2>
+    <div class="method-summary"></div>
+    <ol>
+        <li><a href="#apiAudiosIdAudioGet"><code><span class="http-method">get</span> /api/audios/{idAudio}</code></a></li>
+        <li><a href="#apiAudiosIdAudioListenDelete"><code><span class="http-method">delete</span> /api/audios/{idAudio}/listen</code></a></li>
+        <li><a href="#apiAudiosIdAudioListenPost"><code><span class="http-method">post</span> /api/audios/{idAudio}/listen</code></a></li>
+        <li><a href="#apiAudiosIdAudioTimeTimeValuePut"><code><span class="http-method">put</span> /api/audios/{idAudio}/time/{timeValue}</code></a></li>
+        <li><a href="#apiDiscoverNewGet"><code><span class="http-method">get</span> /api/discover/new</code></a></li>
+        <li><a href="#apiDiscoverSearchSearchTextGet"><code><span class="http-method">get</span> /api/discover/search/{searchText}</code></a></li>
+        <li><a href="#apiDiscoverTrendingGet"><code><span class="http-method">get</span> /api/discover/trending</code></a></li>
+        <li><a href="#apiSuscriptionsGet"><code><span class="http-method">get</span> /api/suscriptions</code></a></li>
+        <li><a href="#apiSuscriptionsPost"><code><span class="http-method">post</span> /api/suscriptions</code></a></li>
+        <li><a href="#apiSuscriptionsSubidAudiosGet"><code><span class="http-method">get</span> /api/suscriptions/{subid}/audios</code></a></li>
+        <li><a href="#apiUsuarioDelete"><code><span class="http-method">delete</span> /api/usuario</code></a></li>
+        <li><a href="#apiUsuarioPut"><code><span class="http-method">put</span> /api/usuario</code></a></li>
+        <li><a href="#loginPost"><code><span class="http-method">post</span> /login</code></a></li>
+        <li><a href="#registroPost"><code><span class="http-method">post</span> /registro</code></a></li>
+    </ol>
+
+    <div class="method"><a name="apiAudiosIdAudioGet" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /api/audios/{idAudio}</code></pre>
+        </div>
+        <div class="method-summary">Audios de suscripción (<span class="nickname">apiAudiosIdAudioGet</span>)</div>
+        <div class="method-notes">Obtener los audios de una suscripción</div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">idAudio (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID del audio format: int64</div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de consulta completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">404</h4>
+        Un objeto de error que indica que no se pudo encontrar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiAudiosIdAudioListenDelete" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="delete"><code class="huge"><span class="http-method">delete</span> /api/audios/{idAudio}/listen</code></pre>
+        </div>
+        <div class="method-summary">Marcar audio no como escuchado (<span class="nickname">apiAudiosIdAudioListenDelete</span>)</div>
+        <div class="method-notes">Marca el audio indicado como no escuchado para el usuario al que pertenece el token</div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">idAudio (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID del audio format: int64</div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de consulta completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">404</h4>
+        Un objeto de error que indica que no se pudo encontrar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiAudiosIdAudioListenPost" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="post"><code class="huge"><span class="http-method">post</span> /api/audios/{idAudio}/listen</code></pre>
+        </div>
+        <div class="method-summary">Marcar audio como escuchado (<span class="nickname">apiAudiosIdAudioListenPost</span>)</div>
+        <div class="method-notes">Marca el audio indicado como escuchado para el usuario al que pertenece el token</div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">idAudio (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID del audio format: int64</div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de consulta completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">404</h4>
+        Un objeto de error que indica que no se pudo encontrar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiAudiosIdAudioTimeTimeValuePut" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="put"><code class="huge"><span class="http-method">put</span> /api/audios/{idAudio}/time/{timeValue}</code></pre>
+        </div>
+        <div class="method-summary">Guarda el progreso del audio escuchado (<span class="nickname">apiAudiosIdAudioTimeTimeValuePut</span>)</div>
+        <div class="method-notes">Guarda en el tiempo que se ha escuchado el audio indicado</div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">idAudio (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID del audio format: int64</div>
+            <div class="param">timeValue (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Tiempo escuchado format: int64</div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de consulta completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">404</h4>
+        Un objeto de error que indica que no se pudo encontrar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiDiscoverNewGet" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /api/discover/new</code></pre>
+        </div>
+        <div class="method-summary">Podcast recien añadidos (<span class="nickname">apiDiscoverNewGet</span>)</div>
+        <div class="method-notes">Consulta los podcast recien añadidos con la api externa</div>
+
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">501</h4>
+        No implementado
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiDiscoverSearchSearchTextGet" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /api/discover/search/{searchText}</code></pre>
+        </div>
+        <div class="method-summary">Búsqueda de podcast (<span class="nickname">apiDiscoverSearchSearchTextGet</span>)</div>
+        <div class="method-notes">Consulta los podcast que coninciden con la cadena en la api externa</div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">searchText (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Cadena para la búsqueda format: int64</div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de consulta completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">404</h4>
+        Un objeto de error que indica que no se pudo encontrar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiDiscoverTrendingGet" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /api/discover/trending</code></pre>
+        </div>
+        <div class="method-summary">Podcast de exito (<span class="nickname">apiDiscoverTrendingGet</span>)</div>
+        <div class="method-notes">Consulta los podcast de exito con la api externa</div>
+
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">501</h4>
+        No implementado
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiSuscriptionsGet" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /api/suscriptions</code></pre>
+        </div>
+        <div class="method-summary">Suscripciones del usuarios (<span class="nickname">apiSuscriptionsGet</span>)</div>
+        <div class="method-notes">Obtener las suscripciones del usuario</div>
+
+
+
+
+
+
+
+        <h3 class="field-label">Return type</h3>
+        <div class="return-type">
+            array[<a href="#Suscription">Suscription</a>]
+
+        </div>
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+        <h3 class="field-label">Example data</h3>
+        <div class="example-data-content-type">Content-Type: application/json</div>
+        <pre class="example"><code>[ {
+  "susctiption_id" : "aeiou",
+  "web_url" : "aeiou",
+  "name" : "aeiou",
+  "last_guid" : "aeiou",
+  "last_check" : "aeiou",
+  "avg_refresh_time" : "aeiou",
+  "data_url" : "aeiou"
+} ]</code></pre>
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Lista de suscripciones
+
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">500</h4>
+        Un objeto de error que indica que no se pudo consultar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiSuscriptionsPost" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="post"><code class="huge"><span class="http-method">post</span> /api/suscriptions</code></pre>
+        </div>
+        <div class="method-summary">Añadir suscripción (<span class="nickname">apiSuscriptionsPost</span>)</div>
+        <div class="method-notes">Añadir suscripción al usuario</div>
+
+
+
+        <h3 class="field-label">Request body</h3>
+        <div class="field-items">
+            <div class="param">body (required)</div>
+
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Datos del feed de audios que queremos añadir </div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">201</h4>
+        Un código de estado de creación completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">500</h4>
+        Un objeto de error que indica que no se pudo añadir
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiSuscriptionsSubidAudiosGet" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /api/suscriptions/{subid}/audios</code></pre>
+        </div>
+        <div class="method-summary">Audios de suscripción (<span class="nickname">apiSuscriptionsSubidAudiosGet</span>)</div>
+        <div class="method-notes">Obtener los audios de una suscripción</div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">subid (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID del audio format: int64</div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+        <h3 class="field-label">Query parameters</h3>
+        <div class="field-items">
+            <div class="param">limit (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Limite de resultados que queremos obtener format: int64</div>
+            <div
+                class="param">lastId (optional)</div>
+
+        <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Valor de la la útlima id que recibimos y a partir de la cual
+            queremos resultados en esta consulta format: int64</div>
+    </div>
+    <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+        array[<a href="#Audio">Audio</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "audio_guid" : "aeiou",
+  "audio_author" : "aeiou",
+  "audio_fetchdate" : "aeiou",
+  "audio_feed" : "aeiou",
+  "audio_pubdate" : "aeiou",
+  "audio_origlink" : "aeiou",
+  "audio_url" : "aeiou",
+  "audio_title" : "aeiou",
+  "audio_content" : "aeiou",
+  "audio_id" : "aeiou"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+        <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Lista de audios
+
+    <h4 class="field-label">400</h4>
+    Un objeto de error de datos invalidos
+
+    <h4 class="field-label">500</h4>
+    Un objeto de error que indica que no se pudo consultar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiUsuarioDelete" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="delete"><code class="huge"><span class="http-method">delete</span> /api/usuario</code></pre>
+        </div>
+        <div class="method-summary">Borrado de usuario (<span class="nickname">apiUsuarioDelete</span>)</div>
+        <div class="method-notes">Url de borrado de usuarios</div>
+
+
+
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de borrado completo
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">500</h4>
+        Un objeto de error que indica que no se pudo borrar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="apiUsuarioPut" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="put"><code class="huge"><span class="http-method">put</span> /api/usuario</code></pre>
+        </div>
+        <div class="method-summary">Edición de usuario (<span class="nickname">apiUsuarioPut</span>)</div>
+        <div class="method-notes">Url de edición de usuarios</div>
+
+
+
+        <h3 class="field-label">Request body</h3>
+        <div class="field-items">
+            <div class="param">body (required)</div>
+
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Datos del usuario que queremos editar </div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un código de estado de edición completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">500</h4>
+        Un objeto de error que indica que no se pudo editar
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="loginPost" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="post"><code class="huge"><span class="http-method">post</span> /login</code></pre>
+        </div>
+        <div class="method-summary">Entrada de usuarios (<span class="nickname">loginPost</span>)</div>
+        <div class="method-notes">Url de entrada de usuarios</div>
+
+
+
+        <h3 class="field-label">Request body</h3>
+        <div class="field-items">
+            <div class="param">body (required)</div>
+
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Datos del usuario que queremos identificar </div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+        <h3 class="field-label">Return type</h3>
+        <div class="return-type">
+
+            Object
+        </div>
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+        <h3 class="field-label">Example data</h3>
+        <div class="example-data-content-type">Content-Type: application/json</div>
+        <pre class="example"><code>"{}"</code></pre>
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">200</h4>
+        Un token de usuario
+        <a href="#Object">Object</a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">404</h4>
+        Un objeto de error de no encontrado
+
+    </div>
+    <!-- method -->
+    <hr/>
+    <div class="method"><a name="registroPost" />
+        <div class="method-path">
+            <a class="up" href="#__Methods">Up</a>
+            <pre class="post"><code class="huge"><span class="http-method">post</span> /registro</code></pre>
+        </div>
+        <div class="method-summary">Creación de usuario (<span class="nickname">registroPost</span>)</div>
+        <div class="method-notes">Url de creación de usuarios</div>
+
+
+
+        <h3 class="field-label">Request body</h3>
+        <div class="field-items">
+            <div class="param">body (required)</div>
+
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Datos del usuario que queremos registrar </div>
+        </div>
+        <!-- field-items -->
+
+
+
+
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+        <h3 class="field-label">Produces</h3>
+        This API call produces the following media types according to the <span class="header">Accept</span> request header;
+        the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+
+        <h3 class="field-label">Responses</h3>
+        <h4 class="field-label">201</h4>
+        Un código de estado de creación completa
+        <a href="#"></a>
+        <h4 class="field-label">400</h4>
+        Un objeto de error de datos invalidos
+
+        <h4 class="field-label">500</h4>
+        Un objeto de error que indica que no se pudo crear
+
+    </div>
+    <!-- method -->
+    <hr/>
+
+    <div class="up"><a href="#__Models">Up</a></div>
+    <h2><a name="__Models">Models</a></h2>
+    [ Jump to <a href="#__Methods">Methods</a> ]
+
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#Audio"><code>Audio</code></a></li>
+        <li><a href="#Error"><code>Error</code></a></li>
+        <li><a href="#Feed"><code>Feed</code></a></li>
+        <li><a href="#Suscription"><code>Suscription</code></a></li>
+        <li><a href="#Token"><code>Token</code></a></li>
+        <li><a href="#Usuario"><code>Usuario</code></a></li>
+    </ol>
+
+    <div class="model">
+        <h3 class="field-label"><a name="Audio">Audio</a> <a class="up" href="#__Models">Up</a></h3>
+        <div class="field-items">
+            <div class="param">audio_id </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Id unica para el audio. </div>
+            <div class="param">audio_feed </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ID del feed al que pertenece el audio. </div>
+            <div class="param">audio_author </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Autor que publicó el audio. </div>
+            <div class="param">audio_origlink </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enlace a la web de la fuente. </div>
+            <div class="param">audio_title </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Titulo del audio. </div>
+            <div class="param">audio_content </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Texto con la descripción del audio. </div>
+            <div class="param">audio_url </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URL del mp3. </div>
+            <div class="param">audio_guid </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> guid unica entre audios de un feed dedicado a la
+                paginación. </div>
+            <div class="param">audio_pubdate </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fecha de publicación. </div>
+            <div class="param">audio_fetchdate </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fecha de recepción. </div>
+        </div>
+        <!-- field-items -->
+    </div>
+    <div class="model">
+        <h3 class="field-label"><a name="Error">Error</a> <a class="up" href="#__Models">Up</a></h3>
+        <div class="field-items">
+            <div class="param">error (optional)</div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mensaje de error </div>
+        </div>
+        <!-- field-items -->
+    </div>
+    <div class="model">
+        <h3 class="field-label"><a name="Feed">Feed</a> <a class="up" href="#__Models">Up</a></h3>
+        <div class="field-items">
+            <div class="param">feedUrl </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URL del feed de audios </div>
+        </div>
+        <!-- field-items -->
+    </div>
+    <div class="model">
+        <h3 class="field-label"><a name="Suscription">Suscription</a> <a class="up" href="#__Models">Up</a></h3>
+        <div class="field-items">
+            <div class="param">susctiption_id </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Id unica para el la suscripción. </div>
+            <div class="param">name </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nombre del podcast. </div>
+            <div class="param">web_url (optional)</div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Web de la pagina del proveedor. </div>
+            <div class="param">data_url </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URL del xml que contiene toda la información. </div>
+            <div class="param">last_check </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ültima comprobación de novedades. </div>
+            <div class="param">avg_refresh_time </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Estimación de cada cuando tiempo suele publicar
+                un audio. </div>
+            <div class="param">last_guid </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> guid del último audio publicado </div>
+        </div>
+        <!-- field-items -->
+    </div>
+    <div class="model">
+        <h3 class="field-label"><a name="Token">Token</a> <a class="up" href="#__Models">Up</a></h3>
+        <div class="field-items">
+            <div class="param">token </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token del usuario </div>
+        </div>
+        <!-- field-items -->
+    </div>
+    <div class="model">
+        <h3 class="field-label"><a name="Usuario">Usuario</a> <a class="up" href="#__Models">Up</a></h3>
+        <div class="field-items">
+            <div class="param">name </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Login del usuario </div>
+            <div class="param">password </div>
+            <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Contraseña del usuario </div>
+        </div>
+        <!-- field-items -->
+    </div>
+</body>
+
+</html>

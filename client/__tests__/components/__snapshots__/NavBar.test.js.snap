@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar creation 1`] = `
+<nav
+  className="navbar navbar-default"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="navbar-header"
+    >
+      <button
+        className="navbar-toggle"
+        type="button"
+      >
+        <span
+          className="sr-only"
+        >
+          Toggle navigation
+        </span>
+        <span
+          className="icon-bar bar1"
+        />
+        <span
+          className="icon-bar bar2"
+        />
+        <span
+          className="icon-bar bar3"
+        />
+      </button>
+      <a
+        className="navbar-brand"
+        href="#"
+      >
+        Dashboard
+      </a>
+    </div>
+    <div
+      className="collapse navbar-collapse"
+    >
+      <ul
+        className="nav navbar-nav navbar-right"
+      >
+        <li>
+          <a
+            href="/add"
+            onClick={[Function]}
+          >
+            <i
+              className="ti-plus"
+            />
+             
+            <p>
+              Add suscription
+            </p>
+          </a>
+        </li>
+        <li
+          className="dropdown"
+        >
+          <a
+            className="dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+          >
+            <i
+              className="ti-settings"
+            />
+             
+            <p>
+              Settings
+            </p>
+            <b
+              className="caret"
+            />
+          </a>
+          <ul
+            className="dropdown-menu"
+          >
+            <li>
+              <a
+                href="/account"
+                onClick={[Function]}
+              >
+                My account
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+                onClick={[Function]}
+              >
+                About
+              </a>
+            </li>
+            <li
+              className="divider"
+              role="separator"
+            />
+            <li>
+              <a
+                href="/logout"
+                onClick={[Function]}
+              >
+                Logout
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;

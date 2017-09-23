@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title%>
+    </title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        function createToastBox() {
+            const body = document.body;
+            const toastContainer = document.createElement("div");
+            toastContainer.id = "toastContainer";
+
+            body.appendChild(toastContainer);
+        }
+
+        var showToast = function (message) {
+            // Crear en nuevo mensaje toast
+            const toastBox = document.createElement("div");
+            toastBox.className = "toastBox";
+
+            // Añadir el texto al toast
+            var textContent = document.createTextNode(message);
+            toastBox.appendChild(textContent);
+
+            // Añadir botón de cerrar
+            const closeButton = document.createElement("span");
+            closeButton.className = "closeButton";
+            var closeButtonContent = document.createTextNode("x");
+            closeButton.appendChild(closeButtonContent);
+            toastBox.appendChild(closeButton);
+
+            // Añadir al contenedor de mensajes
+            const toastContainer = document.getElementById("toastContainer");
+            toastContainer.appendChild(toastBox);
+
+            // Eliminar tras un tiempo (vigilar que el tiempo sea el mismo que el indicado en el css)
+            var timer = setTimeout(function () {
+                toastContainer.removeChild(toastBox);
+            }, 5000);
+
+            closeButton.addEventListener('click', function () {
+                clearTimeout(timer);
+                toastContainer.removeChild(toastBox);
+            });
+        };
+
+        // Container
+        createToastBox();
+    </script>
+</body>
+
+</html>

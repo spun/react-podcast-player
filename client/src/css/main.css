@@ -1,0 +1,150 @@
+html,
+body,
+#app,
+#app > div {
+	height: 100%;
+}
+
+body {
+	/*background: url('../img/default.png') center center no-repeat;*/
+}
+
+.app-wrapper {
+	height: 100%;
+}
+
+.top-container {
+	height: calc(100% - 106px);
+}
+
+.sidebar {
+	width: 300px;
+	margin-bottom: 106px;
+	height: auto; /* overrides theme value */
+}
+
+.sidebar .sidebar-wrapper {
+	width: 300px;
+}
+
+.main-panel {
+	width: calc(100% - 300px);
+}
+
+@media (max-width: 991px) {
+	.main-panel {
+		width: 100%;
+	}
+}
+
+.player {
+	overflow: hidden;
+	height: 106px;
+	background-color: blueviolet;
+}
+
+.loginForm,
+.registrationForm {
+	padding-top: 150px;
+	background: #f4f3ef;
+}
+
+.grayScale {
+	filter: grayscale(100%);
+}
+
+.audio-date {
+	margin: 5px;
+}
+
+.center p {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sidebar .nav li {
+	height: 70px;
+	overflow: hidden;
+	border-bottom: 1px solid #f1eae0;
+}
+
+.sidebar .nav li a {
+	padding: 0;
+	margin: 0px 10px;
+	padding: 15px 0;
+	color: black;
+}
+
+.sidebar .nav li p {
+	padding: 2px;
+	line-height: normal;
+	text-transform: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: normal;
+}
+
+.sidebar .nav li p.title {
+	font-size: 13px;
+}
+
+.audio-status {
+	cursor: pointer;
+}
+
+.audio-status-pending {
+	background: #42a084;
+	color: white;
+	padding: 0px 5px 2px;
+	border-radius: 5px;
+}
+
+.audio-status-pending:hover {
+	color: white;
+}
+
+#toastContainer {
+	position: absolute;
+	bottom: 120px;
+	right: 5px;
+	min-width: 400px;
+	z-index: 99;
+}
+
+.toastBox {
+	right: 10px;
+	min-height: 40px;
+	color: white;
+	background: black;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	opacity: 0.7;
+	animation: fadeinout 5s linear forwards;
+}
+
+.toastBox .closeButton {
+	color: silver;
+	float: right;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+@keyframes fadeinout {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PodcastAudiosList creation 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="header"
+  >
+    <h4
+      className="title"
+    >
+      Podcast audios
+    </h4>
+  </div>
+  <div
+    className="content"
+  >
+    <ul
+      className="list-unstyled team-members"
+    >
+      <li>
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-1"
+          >
+            <div
+              className="text-center"
+              title="Invalid Date"
+            >
+              <span
+                className="audio-date small "
+              >
+                Invalid Date
+              </span>
+              <br />
+              <span
+                className="audio-date small "
+              >
+                Invalid Date
+              </span>
+            </div>
+          </div>
+          <div
+            className="col-xs-9"
+          >
+            <a
+              className={undefined}
+              href="/podcast/0/audios/1"
+              onClick={[Function]}
+              style={undefined}
+            >
+              audio 1
+            </a>
+            <br />
+            <span
+              className="text-muted audio-status"
+              data-toggle="dropdown"
+            >
+              <small>
+                Played 
+                <span
+                  className="caret"
+                />
+              </small>
+            </span>
+            <ul
+              className="dropdown-menu"
+            >
+              <li
+                onClick={[Function]}
+              >
+                <a
+                  href="#"
+                >
+                  Mark as unplayed
+                </a>
+              </li>
+              <li>
+                <a
+                  download={true}
+                  href={undefined}
+                >
+                  Download file
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          >
+            <button
+              className="btn btn-sm btn-success btn-icon"
+              onClick={[Function]}
+            >
+              <i
+                className="ti-control-play"
+              />
+            </button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-1"
+          >
+            <div
+              className="text-center"
+              title="Invalid Date"
+            >
+              <span
+                className="audio-date small "
+              >
+                Invalid Date
+              </span>
+              <br />
+              <span
+                className="audio-date small "
+              >
+                Invalid Date
+              </span>
+            </div>
+          </div>
+          <div
+            className="col-xs-9"
+          >
+            <a
+              className={undefined}
+              href="/podcast/0/audios/2"
+              onClick={[Function]}
+              style={undefined}
+            >
+              audio 2
+            </a>
+            <br />
+            <span
+              className="text-muted audio-status"
+              data-toggle="dropdown"
+            >
+              <small>
+                Played 
+                <span
+                  className="caret"
+                />
+              </small>
+            </span>
+            <ul
+              className="dropdown-menu"
+            >
+              <li
+                onClick={[Function]}
+              >
+                <a
+                  href="#"
+                >
+                  Mark as unplayed
+                </a>
+              </li>
+              <li>
+                <a
+                  download={true}
+                  href={undefined}
+                >
+                  Download file
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          >
+            <button
+              className="btn btn-sm btn-success btn-icon"
+              onClick={[Function]}
+            >
+              <i
+                className="ti-control-play"
+              />
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      className=" footer text-center"
+    >
+      <button
+        className="btn btn-info btn-fill btn-wd"
+        onClick={[Function]}
+        type="submit"
+      >
+        Load more audios
+      </button>
+    </div>
+  </div>
+</div>
+`;
